@@ -77,7 +77,7 @@ displayed if the 'eventbrite' field in the header is not set.
 {% endif %}
 
 
-<h2 id="general">General Information</h2>
+<h2 id="general">Allgemeine Informationen</h2>
 
 {% comment %}
 INTRODUCTION
@@ -145,8 +145,8 @@ address.
 </p>
 {% elsif online == "true_private" %}
 <p id="where">
-  <strong>Where:</strong> This training will take place online.
-  The instructors will provide you with the information you will need to connect to this meeting.
+  <strong>Wo:</strong> Online.
+  Die Zugangsdaten haben Sie per Mail erhalten bzw. sind im ILIAS-Kursraum hinterlegt.
 </p>
 {% endif %}
 
@@ -157,7 +157,7 @@ This block displays the date and links to Google Calendar.
 {% endcomment %}
 {% if page.humandate %}
 <p id="when">
-  <strong>When:</strong>
+  <strong>Wann:</strong>
   {{page.humandate}}.
   {% include workshop_calendar.html %}
 </p>
@@ -169,15 +169,15 @@ SPECIAL REQUIREMENTS
 Modify the block below if there are any special requirements.
 {% endcomment %}
 <p id="requirements">
-  <strong>Requirements:</strong>
+  <strong>Anforderungen:</strong>
   {% if online == "false" %}
-    Participants must bring a laptop with a
-    Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
+    Teilnehmer benötigen einen Rechner mit einem
+    Mac-, Linux-, oder Windows-Betriebssystem (kein Tablet, Chromebook, etc.), auf dem sie Admin-Rechte haben.
   {% else %}
-    Participants must have access to a computer with a
-    Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
+    Teilnehmer benötigen einen Rechner mit einem
+    Mac-, Linux-, oder Windows-Betriebssystem (kein Tablet, Chromebook, etc.), auf dem sie Admin-Rechte haben.
   {% endif %}
-  They should have a few specific software packages installed (listed <a href="#setup">below</a>).
+  Vor Beginn des Workshops sollten dort einige Software-Pakete installiert sein (unten <a href="#setup">spezifiziert</a>).
 </p>
 
 {% comment %}
@@ -187,7 +187,7 @@ Modify the block below if there are any barriers to accessibility or
 special instructions.
 {% endcomment %}
 <p id="accessibility">
-  <strong>Accessibility:</strong>
+  <strong>Barrierefreiheit:</strong>
 {% if online == "false" %}
   We are committed to making this workshop
   accessible to everybody.  For workshops at a physical location, the workshop organizers have checked that:
@@ -205,9 +205,7 @@ special instructions.
   attempt to provide them.
 </p>
 {% else %}
-  We are dedicated to providing a positive and accessible learning environment for all. Please
-  notify the instructors in advance of the workshop if you require any accommodations or if there is
-  anything we can do to make this workshop more accessible to you.
+  Wir versuchen, eine für alle zugängliche Lernumgebung zu schaffen. Bitte sagen Sie uns vor dem Workshop Bescheid, wenn Sie besondere Bedarfe haben oder wir etwas tun können, um den Workshop einfacher zugänglich zu machen.
 </p>
 {% endif %}
 
@@ -217,12 +215,12 @@ CONTACT EMAIL ADDRESS
 Display the contact email address set in the configuration file.
 {% endcomment %}
 <p id="contact">
-  <strong>Contact:</strong>
-  Please email
+  <strong>Kontakt:</strong>
+  Senden Sie eine Mail an
   {% if page.email %}
   {% for email in page.email %}
   {% if forloop.last and page.email.size > 1 %}
-  or
+  oder
   {% else %}
   {% unless forloop.first %}
   ,
@@ -233,13 +231,13 @@ Display the contact email address set in the configuration file.
   {% else %}
   to-be-announced
   {% endif %}
-  for more information.
+  für weitere Informationen oder bei allgemeinen Fragen.
 </p>
 
 <p id="roles">
-  <strong>Roles:</strong>
-  To learn more about the roles at the workshop (who will be doing what),
-  refer to <a href="https://carpentries.org/workshop_faq/#what-are-the-roles-of-everyone-participating-in-a-workshop">our Workshop FAQ</a>.
+  <strong>Rollen:</strong>
+  Mehr über die Rollen während des Workshops (wer macht was) erfahren Sie in den
+  <a href="https://carpentries.org/workshop_faq/#what-are-the-roles-of-everyone-participating-in-a-workshop">Workshop FAQ</a>.
 </p>
 
 {% comment %}
@@ -271,7 +269,7 @@ CODE OF CONDUCT
 <h2 id="code-of-conduct">Code of Conduct</h2>
 
 <p>
-Everyone who participates in Carpentries activities is required to conform to the <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Code of Conduct</a>. This document also outlines how to report an incident if needed.
+Wer an Carpentries-Aktivitäten teilnimmt, muss den <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Verhaltenskodex</a> beachten. Dieses Dokument beschreibt auch, wie man ggf. einen Vorfall meldet.
 </p>
 
 <p class="text-center">
@@ -283,7 +281,7 @@ Everyone who participates in Carpentries activities is required to conform to th
 
 
 {% comment %}
-Etherpad
+Collaborative Notes
 
 If you want to use an Etherpad, go to
 
@@ -296,7 +294,7 @@ Note we also have a CodiMD (the open-source version of HackMD)
 available at https://codimd.carpentries.org
 {% endcomment %}
 {% if page.collaborative_notes %}
-<h2 id="collaborative_notes">Collaborative Notes</h2>
+<h2 id="collaborative_notes">Pad zum gemeinsamen Arbeiten</h2>
 
 <p>
 Wir werden dieses <a href="{{ page.collaborative_notes }}">kollaborative Dokument</a> nutzen u. a. für Kommunikation, Notizen, oder zum Teilen von URLs und Code-Schnipseln.
@@ -308,8 +306,8 @@ Wir werden dieses <a href="{{ page.collaborative_notes }}">kollaborative Dokumen
 {% comment %}
 SURVEYS - DO NOT EDIT SURVEY LINKS
 {% endcomment %}
-<h2 id="surveys">Surveys</h2>
-<p>Please be sure to complete these surveys before and after the workshop.</p>
+<h2 id="surveys">Umfragen</h2>
+<p>Bitte füllen Sie die Umfragen vor und nach dem Workshop aus.</p>
 {% if site.carpentry == "incubator" %}
 <p><a href="{{ site.incubator_pre_survey }}">Pre-workshop Survey</a></p>
 <p><a href="{{ site.incubator_post_survey }}">Post-workshop Survey</a></p>
@@ -323,8 +321,8 @@ in `_config.yml` or, if this workshop is teaching a lesson in the Incubator,
 change the value of `carpentry` to `incubator`.
 </div>
 {% else %}
-<p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
+<p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey (vorher)</a></p>
+<p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey (nachher)</a></p>
 {% endif %}
 
 <hr/>
@@ -352,7 +350,7 @@ of code below the Schedule `<h2>` header below with
 `{% include custom-schedule.html %}`.
 {% endcomment %}
 
-<h2 id="schedule">Schedule</h2>
+<h2 id="schedule">Zeitplan</h2>
 
 {% if site.carpentry == "swc" %}
 {% include swc/schedule.html %}
@@ -390,10 +388,10 @@ please preview your site before committing, and make sure to run
 'tools/check' as well.
 {% endcomment %}
 
-<h2 id="setup">Setup</h2>
+<h2 id="setup">Installationen / Setup</h2>
 
 <p>
-  To participate in a
+  Um teilzunehmen an einem
   {% if site.carpentry == "swc" %}
   Software Carpentry
   {% elsif site.carpentry == "dc" %}
@@ -401,14 +399,13 @@ please preview your site before committing, and make sure to run
   {% elsif site.carpentry == "lc" %}
   Library Carpentry
   {% endif %}
-  workshop,
-  you will need access to software as described below.
-  In addition, you will need an up-to-date web browser.
+  Workshop,
+  benötigen Sie die im Folgenden aufgeführte Software.
+  Außerdem brauchen Sie einen aktuellen Web-Browser.
 </p>
 <p>
-  We maintain a list of common issues that occur during installation as a reference for instructors
-  that may be useful on the
-  <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
+  Diese Liste mit häufig bei der Installation auftretenden Problemen kann ggf. nützlich sein:
+  <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Konfigurationsprobleme und -lösungen</a>.
 </p>
 
 {% comment %}
