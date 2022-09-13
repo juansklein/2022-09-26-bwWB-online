@@ -283,7 +283,7 @@ Everyone who participates in Carpentries activities is required to conform to th
 
 
 {% comment %}
-Collaborative Notes
+Etherpad
 
 If you want to use an Etherpad, go to
 
@@ -299,7 +299,7 @@ available at https://codimd.carpentries.org
 <h2 id="collaborative_notes">Collaborative Notes</h2>
 
 <p>
-We will use this <a href="{{ page.collaborative_notes }}">collaborative document</a> for chatting, taking notes, and sharing URLs and bits of code.
+Wir werden dieses <a href="{{ page.collaborative_notes }}">kollaborative Dokument</a> nutzen u. a. für Kommunikation, Notizen, oder zum Teilen von URLs und Code-Schnipseln.
 </p>
 <hr/>
 {% endif %}
